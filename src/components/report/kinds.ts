@@ -11,13 +11,13 @@ export const kindIcon = (kind: ActivityKind): LucideIcon =>
 export const barClass = (activity: Activity, idleIndex: number): string => {
   if (activity.kind === "produtiva") return "bg-bar-prod";
   if (activity.kind === "almoco") return "bg-bar-lunch";
-  return IDLE_COLORS[idleIndex % IDLE_COLORS.length];
+  return IDLE_COLORS[idleIndex % IDLE_COLORS.length] ?? IDLE_COLORS[0]!;
 };
 
 export const swatchClass = (activity: Activity, idleIndex: number): string => {
   if (activity.kind === "produtiva") return "text-bar-prod";
   if (activity.kind === "almoco") return "text-bar-lunch";
-  return IDLE_SWATCH[idleIndex % IDLE_SWATCH.length];
+  return IDLE_SWATCH[idleIndex % IDLE_SWATCH.length] ?? IDLE_SWATCH[0]!;
 };
 
 /** Índice da atividade entre as improdutivas, para variar o tom. */

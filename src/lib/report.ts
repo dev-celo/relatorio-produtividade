@@ -30,7 +30,9 @@ export const KIND_LABEL: Record<ActivityKind, string> = {
 };
 
 export const toMinutes = (hhmm: string): number => {
-  const [h, m] = hhmm.split(":").map((n) => Number.parseInt(n, 10));
+  const parts = hhmm.split(":").map((n) => Number.parseInt(n, 10));
+  const h = parts[0] ?? NaN;
+  const m = parts[1] ?? NaN;
   if (Number.isNaN(h) || Number.isNaN(m)) return 0;
   return h * 60 + m;
 };

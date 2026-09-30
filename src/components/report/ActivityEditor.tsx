@@ -32,7 +32,7 @@ type Props = {
 };
 
 export function ActivityEditor({ activities, onChange, shiftStart }: Props) {
-  const lastEnd = activities.length ? activities[activities.length - 1].end : shiftStart;
+  const lastEnd = activities[activities.length - 1]?.end ?? shiftStart;
   const [draft, setDraft] = useState<Activity>(() => blank(lastEnd));
   const [editingId, setEditingId] = useState<string | null>(null);
 

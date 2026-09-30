@@ -145,7 +145,7 @@ export function ReportSheet({ report, onChange }: Props) {
                           {a.name}
                         </p>
                         {a.subtitle ? (
-                          <p className={`truncate text-[10px] font-bold ${swatchClass(a, idle[a.id])}`}>
+                          <p className={`truncate text-[10px] font-bold ${swatchClass(a, (idle[a.id] ?? 0))}`}>
                             {a.subtitle}
                           </p>
                         ) : null}
@@ -185,7 +185,7 @@ export function ReportSheet({ report, onChange }: Props) {
                         <span>{a.end}</span>
                       </div>
                       <div
-                        className={`absolute top-8 h-4 rounded-sm ${barClass(a, idle[a.id])}`}
+                        className={`absolute top-8 h-4 rounded-sm ${barClass(a, (idle[a.id] ?? 0))}`}
                         style={{ left: `${left}%`, width: `${width}%` }}
                         title={`${a.name} · ${formatDuration(durationOf(a))}`}
                       />
@@ -240,7 +240,7 @@ export function ReportSheet({ report, onChange }: Props) {
               return (
                 <li key={a.id} className="flex items-center gap-2 text-[12px]">
                   <Icon className="size-3.5 shrink-0 text-brand" />
-                  <span className={`size-3 shrink-0 rounded-[3px] ${barClass(a, idle[a.id])}`} />
+                  <span className={`size-3 shrink-0 rounded-[3px] ${barClass(a, (idle[a.id] ?? 0))}`} />
                   <span className="truncate uppercase">
                     {a.name} {a.subtitle}
                   </span>
