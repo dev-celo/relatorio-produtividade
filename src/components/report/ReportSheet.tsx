@@ -112,15 +112,21 @@ export function ReportSheet({ report, onChange }: Props) {
                 ATIVIDADES RELACIONADAS
               </div>
               <div className="relative h-7">
-                {axis.hours.map((h) => (
-                  <span
-                    key={h}
-                    className="absolute -translate-x-1/2 text-xs font-medium text-muted-foreground"
-                    style={{ left: `${pct(h - axis.axisStart)}%` }}
-                  >
-                    {labelFromMinutes(h)}
-                  </span>
-                ))}
+                {axis.hours.map((h, i) => {
+                  const isFirst = i === 0;
+                  const isLast = i === axis.hours.length - 1;
+                  return (
+                    <span
+                      key={h}
+                      className={`absolute text-xs font-medium text-muted-foreground ${
+                        isFirst ? "" : isLast ? "-translate-x-full" : "-translate-x-1/2"
+                      }`}
+                      style={{ left: `${pct(h - axis.axisStart)}%` }}
+                    >
+                      {labelFromMinutes(h)}
+                    </span>
+                  );
+                })}
               </div>
             </div>
 
