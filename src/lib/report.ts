@@ -122,13 +122,13 @@ export const emptyReport = (date: string): Report => ({
   company: "GAMA",
   logoUrl: "",
   title: "RELATÓRIO DIÁRIO DE PRODUÇÃO",
-  subtitle: "BASE DO ARMCO – BASE 2",
+  subtitle: "MONTAGEM DO ARMCO",
   date,
-  mainActivity: "REGULARIZAÇÃO DA ESCAVAÇÃO DA BASE",
+  mainActivity: "PRÉ-MONTAGEM DO GABARITO DO ARMCO - ÁREA 8",
   mainActivityNote: "(ATIVIDADE PRINCIPAL - GAMA)",
-  situation: "",
+  situation: "EM ANDAMENTO",
   summary: "",
-  shiftStart: "07:00",
+  shiftStart: "08:00",
   activities: [],
 });
 
@@ -137,12 +137,14 @@ export const sampleReport = (): Report => ({
   situation:
     "A área destinada à montagem do ARMCO (workshop) não sofreu nenhum impacto durante a execução das atividades do dia, possibilitando o avanço da pré-montagem dos módulos das bases direita e esquerda.",
   summary:
-    "Das 07h00 às 16h30, foi possível realizar a pré-montagem do ARMCO na lateral do piso do workshop, uma vez que a área ainda não estava liberada para o início das atividades devido à instalação dos postes. Mesmo diante dessa condição, foi possível avançar na execução da atividade.",
+    "Das 08h00 às 16h30, foi possível realizar a pré-montagem do ARMCO na lateral do piso do workshop, uma vez que a área ainda não estava liberada para o início das atividades devido à instalação dos postes. Mesmo diante dessa condição, foi possível avançar na execução da atividade.",
   activities: [
-    { id: newId(), name: "PRÉ MONTAGEM DOS MÓDULOS DO ARMCO",
+    { id: newId(),
+      name: "PRÉ MONTAGEM DOS MÓDULOS DO ARMCO",
       subtitle: "Realizamos a pré montagem de 6 módulos do ARMCO",
       start: "08:00", end: "15:30",
-      kind: "produtiva" },
+      kind: "produtiva"
+    },
     {
       id: newId(),
       name: "FORNECIMENTO DO GABARITO DO ARMCO PARA ÁREA 8",
